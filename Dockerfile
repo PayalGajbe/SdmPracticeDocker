@@ -1,5 +1,5 @@
 FROM openjdk:11
-WORKDIR /var/java
-COPY . /var/java
+WORKDIR /app
+COPY . /app
 RUN javac factorial.java
 CMD ["java", "factorial"]
