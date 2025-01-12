@@ -1,6 +1,13 @@
 FROM openjdk:17
-WORKDIR /usr/src/app
-# Copy the current directory contents into the container
-COPY . .
+
+# Set the working directory inside the container
+WORKDIR /app
+
+# Copy all files from the current directory to /app in the container
+COPY . /app
+
+# Compile the Java program
 RUN javac factorial.java
-CMD ["java", "factorial"]
+
+# Run the compiled Java program
+CMD ["java", "factorial"]
